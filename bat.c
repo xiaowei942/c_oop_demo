@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <malloc.h>
-#include "penguin.h"
-#include "penguin_def.h"
+#include "bat.h"
+#include "bat_def.h"
 
 static void Bat_Eat(ObjectPtr obj)
 {
-    puts("企鹅吃鱼");
+    puts("蝙蝠吃飞虫");
 }
 
 void Bat_Construct(ObjectPtr obj)
@@ -21,7 +21,7 @@ void Bat_Construct(ObjectPtr obj)
     //!TODO: 初始化数据
 }
 
-void Bat_Destruct(ObjectPtr *obj)
+void Bat_Destruct(ObjectPtr obj)
 {
     //!TODO: 析构对象
     
@@ -31,7 +31,7 @@ void Bat_Destruct(ObjectPtr *obj)
 void Bat_InitInfo(Bat *ptr) 
 {
     ptr->info.tag = MAKE_CLASS_TAG(ClassID_Bat);
-    ptr->info.vfun = &ptr.func;
+    ptr->info.vfun = &ptr->func;
 
     //! 建立继承关系
     class_inhert_map[ClassID_Bat] = ClassID_Mammal;

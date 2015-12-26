@@ -7,6 +7,7 @@ typedef enum {
     ClassID_Bird,
     ClassID_Penguin,
     ClassID_Swallow,
+    ClassID_Mammal,
     ClassID_Bat,
     ClassID_Tiger,
     ClassID_Plan,

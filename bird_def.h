@@ -1,6 +1,8 @@
 #ifndef __BIRD_DEF__
 #define __BIRD_DEF__
 
+#include "animal_def.h"
+
 typedef struct {
     Animal_Data base;
 } Bird_Data;

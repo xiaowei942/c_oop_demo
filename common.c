@@ -3,7 +3,7 @@
 /**
  * 类继承关系表
  */
-int class_inhert_map[CLASS_ID_MAX] = {0};
+int class_inhert_map[ClassID_MAX] = {0};
 
 //! 是否为对象
 bool is_object(ObjectPtr obj)
@@ -11,7 +11,7 @@ bool is_object(ObjectPtr obj)
     if (obj == NULL)
         return false;
 
-    return (((*(uint32*)obj) >> 16) == CLASS_TAG);
+    return (((*(uint32_t*)obj) >> 16) == CLASS_TAG);
 }
 
 //! 获取对象的类型id
@@ -42,7 +42,7 @@ bool is_instance_of(ObjectPtr obj, class_id id)
 
         this_id = class_inhert_map[this_id];
 
-        if (this_id >= CLASS_ID_MAX)    //!表示出错
+        if (this_id >= ClassID_MAX)    //!表示出错
             return false;
     }
 
@@ -55,7 +55,7 @@ bool is_interface(InterfacePtr obj)
     if (obj == NULL)
         return false;
 
-    return (((*(uint32*)obj) >> 16) == INTERFACE_TAG);
+    return (((*(uint32_t*)obj) >> 16) == INTERFACE_TAG);
 }
 
 //! 获取接口的类型id

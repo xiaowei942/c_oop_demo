@@ -1,12 +1,7 @@
 #include <stdio.h>
 #include <malloc.h>
-#include "penguin.h"
-#include "penguin_def.h"
-
-static void Mammal_Eat(ObjectPtr obj)
-{
-    puts("企鹅吃鱼");
-}
+#include "mammal.h"
+#include "mammal_def.h"
 
 static void Mammal_Breed(ObjectPtr obj)
 {
@@ -21,13 +16,12 @@ void Mammal_Construct(ObjectPtr obj)
 
     //!TODO: 初始化虚函数
     Mammal_Func* func = (Mammal_Func*)(info->vfun);
-    func->base.Eat = Mammal_Eat;
     func->base.Breed = Mammal_Breed;
 
     //!TODO: 初始化数据
 }
 
-void Mammal_Destruct(ObjectPtr *obj)
+void Mammal_Destruct(ObjectPtr obj)
 {
     //!TODO: 析构对象
     
@@ -37,7 +31,7 @@ void Mammal_Destruct(ObjectPtr *obj)
 void Mammal_InitInfo(Mammal *ptr) 
 {
     ptr->info.tag = MAKE_CLASS_TAG(ClassID_Mammal);
-    ptr->info.vfun = &ptr.func;
+    ptr->info.vfun = &ptr->func;
 
     //! 建立继承关系
     class_inhert_map[ClassID_Mammal] = ClassID_Animal;

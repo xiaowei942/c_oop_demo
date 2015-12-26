@@ -21,7 +21,7 @@ void Penguin_Construct(ObjectPtr obj)
     //!TODO: 初始化数据
 }
 
-void Penguin_Destruct(ObjectPtr *obj)
+void Penguin_Destruct(ObjectPtr obj)
 {
     //!TODO: 析构对象
     
@@ -31,7 +31,7 @@ void Penguin_Destruct(ObjectPtr *obj)
 void Penguin_InitInfo(Penguin *ptr) 
 {
     ptr->info.tag = MAKE_CLASS_TAG(ClassID_Penguin);
-    ptr->info.vfun = &ptr.func;
+    ptr->info.vfun = &ptr->func;
 
     //! 建立继承关系
     class_inhert_map[ClassID_Penguin] = ClassID_Bird;

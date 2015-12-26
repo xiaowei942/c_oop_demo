@@ -1,7 +1,7 @@
 #ifndef __TIGER_DEF_H__
 #define __TIGER_DEF_H__
 
-#include "bird_def.h"
+#include "mammal_def.h"
 
 typedef struct {
     Mammal_Data base;

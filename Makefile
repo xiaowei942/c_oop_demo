@@ -8,7 +8,7 @@ CFLAGS+=-std=c99
 all:$(target)
 
 $(target):$(objects)
-	$(CC) $@ $^
+	$(CC) -o $@ $^
 
 clean:
 	-rm $(objects)

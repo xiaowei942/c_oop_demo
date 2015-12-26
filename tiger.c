@@ -1,16 +1,16 @@
 #include <stdio.h>
 #include <malloc.h>
-#include "penguin.h"
-#include "penguin_def.h"
+#include "tiger.h"
+#include "tiger_def.h"
 
 static void Tiger_Eat(ObjectPtr obj)
 {
-    puts("企鹅吃鱼");
+    puts("老虎要吃肉");
 }
 
 void Tiger_Construct(ObjectPtr obj)
 {
-    Bird_Construct(obj);
+    Mammal_Construct(obj);
 
     class_info_t* info = (class_info_t*)obj;
 
@@ -21,20 +21,20 @@ void Tiger_Construct(ObjectPtr obj)
     //!TODO: 初始化数据
 }
 
-void Tiger_Destruct(ObjectPtr *obj)
+void Tiger_Destruct(ObjectPtr obj)
 {
     //!TODO: 析构对象
     
-    Bird_Destruct(obj);
+    Mammal_Destruct(obj);
 }
 
 void Tiger_InitInfo(Tiger *ptr) 
 {
     ptr->info.tag = MAKE_CLASS_TAG(ClassID_Tiger);
-    ptr->info.vfun = &ptr.func;
+    ptr->info.vfun = &ptr->func;
 
     //! 建立继承关系
-    class_inhert_map[ClassID_Tiger] = ClassID_Bird;
+    class_inhert_map[ClassID_Tiger] = ClassID_Mammal;
 }
 
 ObjectPtr Tiger_New()

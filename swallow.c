@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <malloc.h>
-#include "penguin.h"
-#include "penguin_def.h"
+#include "swallow.h"
+#include "swallow_def.h"
 
 static void Swallow_Eat(ObjectPtr obj)
 {
@@ -21,7 +21,7 @@ void Swallow_Construct(ObjectPtr obj)
     //!TODO: 初始化数据
 }
 
-void Swallow_Destruct(ObjectPtr *obj)
+void Swallow_Destruct(ObjectPtr obj)
 {
     //!TODO: 析构对象
     
@@ -31,7 +31,7 @@ void Swallow_Destruct(ObjectPtr *obj)
 void Swallow_InitInfo(Swallow *ptr) 
 {
     ptr->info.tag = MAKE_CLASS_TAG(ClassID_Swallow);
-    ptr->info.vfun = &ptr.func;
+    ptr->info.vfun = &ptr->func;
 
     //! 建立继承关系
     class_inhert_map[ClassID_Swallow] = ClassID_Bird;
