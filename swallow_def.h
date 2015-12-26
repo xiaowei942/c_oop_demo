@@ -17,6 +17,9 @@ typedef struct {
     Swallow_Func func;
 } Swallow;
 
+void Swallow_Class_Init();
+void Swallow_Class_Destory();
+
 void Swallow_Construct(ObjectPtr obj);
 void Swallow_Destruct(ObjectPtr obj);
 

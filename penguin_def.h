@@ -17,6 +17,9 @@ typedef struct {
     Penguin_Func func;
 } Penguin;
 
+void Penguin_Class_Init();
+void Penguin_Class_Destory();
+
 void Penguin_Construct(ObjectPtr obj);
 void Penguin_Destruct(ObjectPtr obj);
 

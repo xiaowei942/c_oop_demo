@@ -3,6 +3,18 @@
 #include "swallow.h"
 #include "swallow_def.h"
 
+void Swallow_Class_Init()
+{
+    //!建立继承关系
+    class_inhert_map[ClassID_Swallow] = ClassID_Bird;
+    //!TODO: 其它初始化功能
+}
+
+void Swallow_Class_Destory()
+{
+    //!TODO: 其它释放功能
+}
+
 static void Swallow_Eat(ObjectPtr obj)
 {
     puts("燕子吃虫子");
@@ -32,9 +44,6 @@ void Swallow_InitInfo(Swallow *ptr)
 {
     ptr->info.tag = MAKE_CLASS_TAG(ClassID_Swallow);
     ptr->info.vfun = &ptr->func;
-
-    //! 建立继承关系
-    class_inhert_map[ClassID_Swallow] = ClassID_Bird;
 }
 
 ObjectPtr Swallow_New()

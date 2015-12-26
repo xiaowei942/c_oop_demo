@@ -3,6 +3,18 @@
 #include "tiger.h"
 #include "tiger_def.h"
 
+void Tiger_Class_Init()
+{
+    //!建立继承关系
+    class_inhert_map[ClassID_Tiger] = ClassID_Mammal;
+    //!TODO: 其它初始化功能
+}
+
+void Tiger_Class_Destory()
+{
+    //!TODO: 其它释放功能
+}
+
 static void Tiger_Eat(ObjectPtr obj)
 {
     puts("老虎要吃肉");

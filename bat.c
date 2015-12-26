@@ -3,6 +3,18 @@
 #include "bat.h"
 #include "bat_def.h"
 
+void Bat_Class_Init()
+{
+    //!建立继承关系
+    class_inhert_map[ClassID_Bat] = ClassID_Mammal;
+    //!TODO: 其它初始化功能
+}
+
+void Bat_Class_Destory()
+{
+    //!TODO: 其它释放功能
+}
+
 static void Bat_Eat(ObjectPtr obj)
 {
     puts("蝙蝠吃飞虫");
@@ -32,9 +44,6 @@ void Bat_InitInfo(Bat *ptr)
 {
     ptr->info.tag = MAKE_CLASS_TAG(ClassID_Bat);
     ptr->info.vfun = &ptr->func;
-
-    //! 建立继承关系
-    class_inhert_map[ClassID_Bat] = ClassID_Mammal;
 }
 
 ObjectPtr Bat_New()

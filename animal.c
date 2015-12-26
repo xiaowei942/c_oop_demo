@@ -3,6 +3,18 @@
 #include "animal.h"
 #include "animal_def.h"
 
+void Animal_Class_Init()
+{
+    //!建立继承关系
+    class_inhert_map[ClassID_Animal] = ClassID_Base;
+    //!TODO: 其它初始化功能
+}
+
+void Animal_Class_Destory()
+{
+    //!TODO: 其它释放功能
+}
+
 static void Animal_V_Eat(ObjectPtr obj)
 {
     puts("动物吃东西");
@@ -17,9 +29,6 @@ void Animal_InitInfo(Animal *ptr)
 {
     ptr->info.tag = MAKE_CLASS_TAG(ClassID_Animal);
     ptr->info.vfun = &ptr->func;
-
-    //! 建立继承关系
-    class_inhert_map[ClassID_Animal] = ClassID_Base;
 }
 
 void Animal_Construct(ObjectPtr obj)

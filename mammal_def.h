@@ -17,6 +17,9 @@ typedef struct {
     Mammal_Func func;
 } Mammal;
 
+void Mammal_Class_Init();
+void Mammal_Class_Destory();
+
 void Mammal_Construct(ObjectPtr obj);
 void Mammal_Destruct(ObjectPtr obj);
 

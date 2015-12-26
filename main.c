@@ -1,10 +1,17 @@
+#include <stdio.h>
+#include "animal.h"
 #include "penguin.h"
 #include "swallow.h"
 #include "bat.h"
 #include "tiger.h"
 
+void ClassInit();
+
 int main()
 {
+    puts("start");
+    ClassInit();
+
     ObjectPtr* penguin = Penguin_New();
     ObjectPtr* swallow = Swallow_New();
     ObjectPtr* bat = Bat_New();
@@ -37,5 +44,6 @@ int main()
     Tiger_Delete(tiger);
     //Plane_Delete(plane);
 
+    puts("end");
     return 0;
 }

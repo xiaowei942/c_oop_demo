@@ -17,6 +17,9 @@ typedef struct {
     Tiger_Func func;
 } Tiger;
 
+void Tiger_Class_Init();
+void Tiger_Class_Destory();
+
 void Tiger_Construct(ObjectPtr obj);
 void Tiger_Destruct(ObjectPtr obj);
 

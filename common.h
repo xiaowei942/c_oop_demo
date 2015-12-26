@@ -8,8 +8,8 @@
 #define CLASS_TAG       0x4352
 #define INTERFACE_TAG   0xaced
 
-//! 类继承关系表
-extern int class_inhert_map[ClassID_MAX];
+#define MAKE_CLASS_TAG(class_id)        ((CLASS_TAG << 16) | class_id)
+#define MAKE_INTERFACE_TAG(class_id)    ((INTERFACE_TAG << 16) | class_id)
 
 typedef unsigned int uint32_t;
 
@@ -32,8 +32,8 @@ typedef struct {
     void* obj;      //! 对象地址
 } interface_info_t;
 
-#define MAKE_CLASS_TAG(class_id)        ((CLASS_TAG << 16) | class_id)
-#define MAKE_INTERFACE_TAG(class_id)    ((INTERFACE_TAG << 16) | class_id)
+//! 类继承关系表
+extern int class_inhert_map[ClassID_MAX];
 
 //! 是否为对象
 bool is_object(ObjectPtr obj);

@@ -1,5 +1,5 @@
-#ifndef __PENGUIN_DEF_H__
-#define __PENGUIN_DEF_H__
+#ifndef __BAT_DEF_H__
+#define __BAT_DEF_H__
 
 #include "mammal_def.h"
 
@@ -17,7 +17,10 @@ typedef struct {
     Bat_Func func;
 } Bat;
 
+void Bat_Class_Init();
+void Bat_Class_Destory();
+
 void Bat_Construct(ObjectPtr obj);
 void Bat_Destruct(ObjectPtr obj);
 
-#endif //__PENGUIN_DEF_H__
+#endif //__BAT_DEF_H__

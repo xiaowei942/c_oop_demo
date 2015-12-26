@@ -3,6 +3,18 @@
 #include "penguin.h"
 #include "penguin_def.h"
 
+void Penguin_Class_Init()
+{
+    //!建立继承关系
+    class_inhert_map[ClassID_Penguin] = ClassID_Bird;
+    //!TODO: 其它初始化功能
+}
+
+void Penguin_Class_Destory()
+{
+    //!TODO: 其它释放功能
+}
+
 static void Penguin_Eat(ObjectPtr obj)
 {
     puts("企鹅吃鱼");
@@ -32,9 +44,6 @@ void Penguin_InitInfo(Penguin *ptr)
 {
     ptr->info.tag = MAKE_CLASS_TAG(ClassID_Penguin);
     ptr->info.vfun = &ptr->func;
-
-    //! 建立继承关系
-    class_inhert_map[ClassID_Penguin] = ClassID_Bird;
 }
 
 ObjectPtr Penguin_New()

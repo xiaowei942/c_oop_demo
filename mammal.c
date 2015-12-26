@@ -3,6 +3,18 @@
 #include "mammal.h"
 #include "mammal_def.h"
 
+void Mammal_Class_Init()
+{
+    //!建立继承关系
+    class_inhert_map[ClassID_Mammal] = ClassID_Animal;
+    //!TODO: 其它初始化功能
+}
+
+void Mammal_Class_Destory()
+{
+    //!TODO: 其它释放功能
+}
+
 static void Mammal_Breed(ObjectPtr obj)
 {
     puts("胎生");
@@ -32,9 +44,6 @@ void Mammal_InitInfo(Mammal *ptr)
 {
     ptr->info.tag = MAKE_CLASS_TAG(ClassID_Mammal);
     ptr->info.vfun = &ptr->func;
-
-    //! 建立继承关系
-    class_inhert_map[ClassID_Mammal] = ClassID_Animal;
 }
 
 ObjectPtr Mammal_New()

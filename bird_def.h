@@ -17,6 +17,9 @@ typedef struct {
     Bird_Func func;
 } Bird;
 
+void Bird_Class_Init();
+void Bird_Class_Destory();
+
 void Bird_Construct(ObjectPtr obj);
 void Bird_Destruct(ObjectPtr obj);
 

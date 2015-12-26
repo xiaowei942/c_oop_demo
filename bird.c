@@ -3,12 +3,19 @@
 #include "bird.h"
 #include "bird_def.h"
 
-static void Bird_Eat(ObjectPtr obj)
+void Bird_Class_Init()
 {
-    puts("鸟吃东西");
+    //!建立继承关系
+    class_inhert_map[ClassID_Bird] = ClassID_Animal;
+    //!TODO: 其它初始化功能
 }
 
-static void Bird_Breed(ObjectPtr obj)
+void Bird_Class_Destory()
+{
+    //!TODO: 其它释放功能
+}
+
+static void Bird_V_Breed(ObjectPtr obj)
 {
     puts("蛋生");
 }
@@ -17,9 +24,6 @@ void Bird_InitInfo(Bird *ptr)
 {
     ptr->info.tag = MAKE_CLASS_TAG(ClassID_Bird);
     ptr->info.vfun = &ptr->func;
-
-    //! 建立继承关系
-    class_inhert_map[ClassID_Bird] = ClassID_Animal;
 }
 
 void Bird_Construct(ObjectPtr obj)
@@ -30,8 +34,7 @@ void Bird_Construct(ObjectPtr obj)
 
     //!TODO: 初始化虚函数
     Bird_Func* func = (Bird_Func*)(info->vfun);
-    func->base.Eat = Bird_Eat;
-    func->base.Breed = Bird_Breed;
+    func->base.Breed = Bird_V_Breed;
 
     //!TODO: 初始化数据
 }

@@ -3,7 +3,7 @@
 /**
  * 类继承关系表
  */
-int class_inhert_map[ClassID_MAX] = {0};
+int class_inhert_map[ClassID_MAX] = {-1,0};
 
 //! 是否为对象
 bool is_object(ObjectPtr obj)
@@ -36,15 +36,12 @@ bool is_instance_of(ObjectPtr obj, class_id id)
     if (this_id == -1)
         return false;
 
-    while (this_id != 0) {
+    do {
         if (this_id == id)
             return true;
 
         this_id = class_inhert_map[this_id];
-
-        if (this_id >= ClassID_MAX)    //!表示出错
-            return false;
-    }
+    } while (this_id < ClassID_MAX && this_id >= 0);
 
     return false;
 }
