@@ -1,9 +1,9 @@
-target=test
+target=c_oop_demo
 sources=$(wildcard *.c)
 objects=$(subst .c,.o,$(sources))
 
 CC:=gcc
-CFLAGS+=-std=c99 -g
+CFLAGS+=-std=c99# -g
 
 all:$(target)
 
