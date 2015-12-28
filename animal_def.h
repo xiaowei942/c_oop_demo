@@ -1,15 +1,15 @@
 #ifndef __ANIMAL_DEF_H__
 #define __ANIMAL_DEF_H__
 
-#include "common.h"
+#include "oop_common.h"
 
 typedef struct {
-    int health; 
+    int _health; 
 } Animal_Data;
 
 typedef struct {
-    void (*Eat)();
-    void (*Breed)();
+    void (*_Eat)();
+    void (*_Breed)();
 } Animal_Func;
 
 typedef struct {

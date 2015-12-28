@@ -1,7 +1,7 @@
 #ifndef __PENGUIN_H__
 #define __PENGUIN_H__
 
-#include "common.h"
+#include "oop_common.h"
 
 ObjectPtr Penguin_New();
 void Penguin_Delete(ObjectPtr obj);

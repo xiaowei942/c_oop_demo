@@ -1,4 +1,4 @@
-#include "common.h"
+#include "oop_common.h"
 
 /**
  * 类继承关系表
@@ -68,5 +68,15 @@ class_id get_interface_id(InterfacePtr obj)
         return -1;
 
     return (class_info->tag & 0xffff);
+}
+
+void* OOP_Alloc(size_t size)
+{
+    malloc(size);
+}
+
+void OOP_Free(void *ptr)
+{
+    free(ptr);
 }
 

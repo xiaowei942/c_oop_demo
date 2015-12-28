@@ -1,7 +1,7 @@
 #ifndef __MAMMAL_H__
 #define __MAMMAL_H__
 
-#include "common.h"
+#include "oop_common.h"
 
 ObjectPtr Mammal_New();
 void Mammal_Delete(ObjectPtr obj);

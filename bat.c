@@ -40,26 +40,4 @@ void Bat_Destruct(ObjectPtr obj)
     Mammal_Destruct(obj);
 }
 
-void Bat_InitInfo(Bat *ptr) 
-{
-    ptr->info.tag = MAKE_CLASS_TAG(ClassID_Bat);
-    ptr->info.vfun = &ptr->func;
-}
-
-ObjectPtr Bat_New()
-{
-    Bat *ptr = malloc(sizeof(Bat));
-    if (ptr != NULL) {
-        Bat_InitInfo(ptr);
-        Bat_Construct(ptr);
-    }
-
-    return ptr;
-}
-
-void Bat_Delete(ObjectPtr obj)
-{
-    Bat_Destruct(obj);
-    free(obj);
-}
-
+CLASS_FUNC_DEFINE(Bat, OOP)
