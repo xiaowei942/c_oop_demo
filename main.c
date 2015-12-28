@@ -5,12 +5,12 @@
 #include "bat.h"
 #include "tiger.h"
 
-void ClassInit();
+void OOP_Init();
 
 int main()
 {
     puts("start");
-    ClassInit();
+    OOP_Init();
 
     ObjectPtr* penguin = Penguin_New();
     ObjectPtr* swallow = Swallow_New();

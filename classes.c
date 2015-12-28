@@ -6,7 +6,7 @@
 #include "bat_def.h"
 #include "tiger_def.h"
 
-void ClassInit()
+void OOP_Init()
 {
     Animal_Class_Init();
     Bird_Class_Init();
@@ -17,7 +17,7 @@ void ClassInit()
     Tiger_Class_Init();
 }
 
-void ClassDestory()
+void OOP_Destory()
 {
     Tiger_Class_Destory();
     Bat_Class_Destory();

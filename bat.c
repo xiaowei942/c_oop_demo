@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <malloc.h>
 #include "bat.h"
 #include "bat_def.h"
 
@@ -40,4 +39,4 @@ void Bat_Destruct(ObjectPtr obj)
     Mammal_Destruct(obj);
 }
 
-CLASS_FUNC_DEFINE(Bat, OOP)
+BASE_FUNC_DEFINE(Bat, OOP)

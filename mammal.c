@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <malloc.h>
 #include "mammal.h"
 #include "mammal_def.h"
 
@@ -40,4 +39,4 @@ void Mammal_Destruct(ObjectPtr obj)
     Animal_Destruct(obj);
 }
 
-CLASS_FUNC_DEFINE(Mammal, OOP)
+BASE_FUNC_DEFINE(Mammal, OOP)

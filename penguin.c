@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <malloc.h>
 #include "penguin.h"
 #include "penguin_def.h"
 
@@ -40,4 +39,4 @@ void Penguin_Destruct(ObjectPtr obj)
     Bird_Destruct(obj);
 }
 
-CLASS_FUNC_DEFINE(Penguin, OOP)
+BASE_FUNC_DEFINE(Penguin, OOP)

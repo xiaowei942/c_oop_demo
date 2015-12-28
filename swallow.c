@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <malloc.h>
 #include "swallow.h"
 #include "swallow_def.h"
 
@@ -40,4 +39,4 @@ void Swallow_Destruct(ObjectPtr obj)
     Bird_Destruct(obj);
 }
 
-CLASS_FUNC_DEFINE(Swallow, OOP)
+BASE_FUNC_DEFINE(Swallow, OOP)

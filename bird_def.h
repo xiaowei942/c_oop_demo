@@ -11,16 +11,6 @@ typedef struct {
     Animal_Func base;
 } Bird_Func;
 
-typedef struct {
-    class_info_t info;
-    Bird_Data data;
-    Bird_Func func;
-} Bird;
-
-void Bird_Class_Init();
-void Bird_Class_Destory();
-
-void Bird_Construct(ObjectPtr obj);
-void Bird_Destruct(ObjectPtr obj);
+CLASS_BASIC_INFO(Bird);
 
 #endif  //__BIRD_DEF__

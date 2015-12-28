@@ -11,4 +11,4 @@ $(target):$(objects)
 	$(CC) -o $@ $^
 
 clean:
-	-rm $(objects)
+	rm $(objects)

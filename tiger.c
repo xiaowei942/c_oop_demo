@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <malloc.h>
 #include "tiger.h"
 #include "tiger_def.h"
 
@@ -40,4 +39,4 @@ void Tiger_Destruct(ObjectPtr obj)
     Mammal_Destruct(obj);
 }
 
-CLASS_FUNC_DEFINE(Tiger, OOP)
+BASE_FUNC_DEFINE(Tiger, OOP)

@@ -2,6 +2,7 @@
 #define __BAT_DEF_H__
 
 #include "mammal_def.h"
+#include "oop_defines.h"
 
 typedef struct {
     Mammal_Data base;
@@ -11,16 +12,6 @@ typedef struct {
     Mammal_Func base;
 } Bat_Func;
 
-typedef struct {
-    class_info_t info;
-    Bat_Data data;
-    Bat_Func func;
-} Bat;
-
-void Bat_Class_Init();
-void Bat_Class_Destory();
-
-void Bat_Construct(ObjectPtr obj);
-void Bat_Destruct(ObjectPtr obj);
+CLASS_BASIC_INFO(Bat);
 
 #endif //__BAT_DEF_H__

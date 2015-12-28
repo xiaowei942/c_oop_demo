@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <malloc.h>
 #include "animal.h"
 #include "animal_def.h"
 
@@ -44,7 +43,7 @@ void Animal_Destruct(ObjectPtr obj)
     //! DO NOTHING
 }
 
-CLASS_VIRTUAL_INVOKE_FUNC_DEFINE_0(Animal, Eat)
-CLASS_VIRTUAL_INVOKE_FUNC_DEFINE_0(Animal, Breed)
+VIRTUAL_FUNC_DEFINE(Animal, Eat)
+VIRTUAL_FUNC_DEFINE(Animal, Breed)
 
-CLASS_FUNC_DEFINE(Animal, OOP)
+BASE_FUNC_DEFINE(Animal, OOP)

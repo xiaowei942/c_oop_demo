@@ -1,6 +1,7 @@
 #ifndef __TIGER_DEF_H__
 #define __TIGER_DEF_H__
 
+#include "oop_defines.h"
 #include "mammal_def.h"
 
 typedef struct {
@@ -11,16 +12,6 @@ typedef struct {
     Mammal_Func base;
 } Tiger_Func;
 
-typedef struct {
-    class_info_t info;
-    Tiger_Data data;
-    Tiger_Func func;
-} Tiger;
-
-void Tiger_Class_Init();
-void Tiger_Class_Destory();
-
-void Tiger_Construct(ObjectPtr obj);
-void Tiger_Destruct(ObjectPtr obj);
+CLASS_BASIC_INFO(Tiger);
 
 #endif //__TIGER_DEF_H__

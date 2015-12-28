@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <malloc.h>
 #include "bird.h"
 #include "bird_def.h"
 
@@ -40,4 +39,4 @@ void Bird_Destruct(ObjectPtr obj)
     Animal_Destruct(obj);
 }
 
-CLASS_FUNC_DEFINE(Bird, OOP)
+BASE_FUNC_DEFINE(Bird, OOP)
