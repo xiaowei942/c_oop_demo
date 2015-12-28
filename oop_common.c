@@ -70,13 +70,3 @@ class_id get_interface_id(InterfacePtr obj)
     return (class_info->tag & 0xffff);
 }
 
-void* OOP_Alloc(size_t size)
-{
-    malloc(size);
-}
-
-void OOP_Free(void *ptr)
-{
-    free(ptr);
-}
-

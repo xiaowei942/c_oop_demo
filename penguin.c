@@ -28,7 +28,7 @@ void Penguin_Construct(ObjectPtr obj)
 
     //!TODO: 初始化虚函数
     Penguin_Func* func = (Penguin_Func*)(info->vfun);
-    func->base.base.Eat = Penguin_Eat;
+    func->base.base._Eat = Penguin_Eat;
 
     //!TODO: 初始化数据
 }
@@ -40,26 +40,4 @@ void Penguin_Destruct(ObjectPtr obj)
     Bird_Destruct(obj);
 }
 
-void Penguin_InitInfo(Penguin *ptr) 
-{
-    ptr->info.tag = MAKE_CLASS_TAG(ClassID_Penguin);
-    ptr->info.vfun = &ptr->func;
-}
-
-ObjectPtr Penguin_New()
-{
-    Penguin *ptr = malloc(sizeof(Penguin));
-    if (ptr != NULL) {
-        Penguin_InitInfo(ptr);
-        Penguin_Construct(ptr);
-    }
-
-    return ptr;
-}
-
-void Penguin_Delete(ObjectPtr obj)
-{
-    Penguin_Destruct(obj);
-    free(obj);
-}
-
+CLASS_FUNC_DEFINE(Penguin, OOP)

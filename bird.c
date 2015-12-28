@@ -20,12 +20,6 @@ static void Bird_V_Breed(ObjectPtr obj)
     puts("蛋生");
 }
 
-void Bird_InitInfo(Bird *ptr) 
-{
-    ptr->info.tag = MAKE_CLASS_TAG(ClassID_Bird);
-    ptr->info.vfun = &ptr->func;
-}
-
 void Bird_Construct(ObjectPtr obj)
 {
     Animal_Construct(obj);
@@ -34,7 +28,7 @@ void Bird_Construct(ObjectPtr obj)
 
     //!TODO: 初始化虚函数
     Bird_Func* func = (Bird_Func*)(info->vfun);
-    func->base.Breed = Bird_V_Breed;
+    func->base._Breed = Bird_V_Breed;
 
     //!TODO: 初始化数据
 }
@@ -46,20 +40,4 @@ void Bird_Destruct(ObjectPtr obj)
     Animal_Destruct(obj);
 }
 
-ObjectPtr Bird_New()
-{
-    Bird *ptr = malloc(sizeof(Bird));
-    if (ptr != NULL) {
-        Bird_InitInfo(ptr);
-        Bird_Construct(ptr);
-    }
-
-    return ptr;
-}
-
-void Bird_Delete(ObjectPtr obj)
-{
-    Bird_Destruct(obj);
-    free(obj);
-}
-
+CLASS_FUNC_DEFINE(Bird, OOP)

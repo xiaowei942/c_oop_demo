@@ -28,7 +28,7 @@ void Mammal_Construct(ObjectPtr obj)
 
     //!TODO: 初始化虚函数
     Mammal_Func* func = (Mammal_Func*)(info->vfun);
-    func->base.Breed = Mammal_Breed;
+    func->base._Breed = Mammal_Breed;
 
     //!TODO: 初始化数据
 }
@@ -40,26 +40,4 @@ void Mammal_Destruct(ObjectPtr obj)
     Animal_Destruct(obj);
 }
 
-void Mammal_InitInfo(Mammal *ptr) 
-{
-    ptr->info.tag = MAKE_CLASS_TAG(ClassID_Mammal);
-    ptr->info.vfun = &ptr->func;
-}
-
-ObjectPtr Mammal_New()
-{
-    Mammal *ptr = malloc(sizeof(Mammal));
-    if (ptr != NULL) {
-        Mammal_InitInfo(ptr);
-        Mammal_Construct(ptr);
-    }
-
-    return ptr;
-}
-
-void Mammal_Delete(ObjectPtr obj)
-{
-    Mammal_Destruct(obj);
-    free(obj);
-}
-
+CLASS_FUNC_DEFINE(Mammal, OOP)

@@ -28,7 +28,7 @@ void Tiger_Construct(ObjectPtr obj)
 
     //!TODO: 初始化虚函数
     Tiger_Func* func = (Tiger_Func*)(info->vfun);
-    func->base.base.Eat = Tiger_Eat;
+    func->base.base._Eat = Tiger_Eat;
 
     //!TODO: 初始化数据
 }
@@ -40,29 +40,4 @@ void Tiger_Destruct(ObjectPtr obj)
     Mammal_Destruct(obj);
 }
 
-void Tiger_InitInfo(Tiger *ptr) 
-{
-    ptr->info.tag = MAKE_CLASS_TAG(ClassID_Tiger);
-    ptr->info.vfun = &ptr->func;
-
-    //! 建立继承关系
-    class_inhert_map[ClassID_Tiger] = ClassID_Mammal;
-}
-
-ObjectPtr Tiger_New()
-{
-    Tiger *ptr = malloc(sizeof(Tiger));
-    if (ptr != NULL) {
-        Tiger_InitInfo(ptr);
-        Tiger_Construct(ptr);
-    }
-
-    return ptr;
-}
-
-void Tiger_Delete(ObjectPtr obj)
-{
-    Tiger_Destruct(obj);
-    free(obj);
-}
-
+CLASS_FUNC_DEFINE(Tiger, OOP)

@@ -28,7 +28,7 @@ void Bat_Construct(ObjectPtr obj)
 
     //!TODO: 初始化虚函数
     Bat_Func* func = (Bat_Func*)(info->vfun);
-    func->base.base.Eat = Bat_Eat;
+    func->base.base._Eat = Bat_Eat;
 
     //!TODO: 初始化数据
 }
