@@ -1,4 +1,4 @@
-#include <malloc.h>
+#include <string.h>
 
 void* OOP_Alloc(size_t size)
 {
